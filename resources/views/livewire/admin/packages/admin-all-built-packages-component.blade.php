@@ -5,7 +5,7 @@
                 <div>
                     <h2 class="text-xl font-semibold leading-tight">Built Packages</h2>
                 </div>
-                <div class="w-full my-4 sm:flex sm:flex-row ">
+                <div class="w-full h-16 my-4 sm:flex sm:flex-row ">
                     <div class="w-full h-10 flex">
                         <div class="">
                             <select wire:model="recordsToDisplay"
@@ -61,8 +61,8 @@
                         </div>
                     </div>
 
-                    <div class="sm:w-4/12 mt-2 sm:flex justify-end text-right">
-                        <div class="flex items-center justify-end text-right">
+                    <div class="w-full h-10 flex sm:w-4/12 mt-2 sm:flex justify-end text-right">
+                        <div class="flex justify-end text-right">
                             <div
                                 x-data="{ isUploading: false, progress: 0 }"
                                 x-on:livewire-upload-start="isUploading = true"
@@ -71,10 +71,12 @@
                                 x-on:livewire-upload-progress="progress = $event.detail.progress"
                             >
                                 {{-- <label for="file">Select XML File:</label> --}}
-                                <input type="file" required id="file" name="file" wire:model="packageXmlFileUploaded">
+                                <input class="block" type="file" required id="file" name="file" wire:model="packageXmlFileUploaded">
                                 <!-- Progress Bar -->
-                                <div class="pt-2 pb-2" x-show="isUploading">
-                                    <progress max="100" x-bind:value="progress"></progress>
+                                <div class="w-full h-10 flex sm:flex">
+                                    <div class="flex items-center justify-end text-right" x-show="isUploading">
+                                        <progress max="100" x-bind:value="progress"></progress>
+                                    </div>
                                 </div>
                             </div>
                             <div>
