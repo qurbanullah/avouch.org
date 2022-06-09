@@ -107,7 +107,7 @@
                         @endif
                     </div>
                 @else
-                <input type="file" wire:model="imageUploaded">
+                    <input type="file" wire:model="imageUploaded">
                     <!-- Progress Bar -->
                     <div class="pt-2 pb-2" x-show="isUploading">
                         <progress max="100" x-bind:value="progress"></progress>
