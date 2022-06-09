@@ -63,9 +63,19 @@
 
                     <div class="sm:w-4/12 mt-2 sm:flex justify-end text-right">
                         <div class="flex items-center justify-end text-right">
-                            <div class="form-group">
+                            <div
+                                x-data="{ isUploading: false, progress: 0 }"
+                                x-on:livewire-upload-start="isUploading = true"
+                                x-on:livewire-upload-finish="isUploading = false"
+                                x-on:livewire-upload-error="isUploading = false"
+                                x-on:livewire-upload-progress="progress = $event.detail.progress"
+                            >
                                 {{-- <label for="file">Select XML File:</label> --}}
                                 <input type="file" required id="file" name="file" wire:model="packageXmlFileUploaded">
+                                <!-- Progress Bar -->
+                                <div class="pt-2 pb-2" x-show="isUploading">
+                                    <progress max="100" x-bind:value="progress"></progress>
+                                </div>
                             </div>
                             <div>
                                 <x-jet-button wire:click="uploadPackageXmlFileToDatabase">
