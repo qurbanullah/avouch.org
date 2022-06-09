@@ -1,0 +1,101 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* place the image in the center override trix claases */
+.attachment img {
+    width: 100%;
+    object-position: center;
+}
+
+/* hide the increase decease icon from nuber field input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+-moz-appearance: textfield;
+}
+
+/* Theme switching */
+#header__indeterminate,#header__moon,#header__sun{display:none}
+html[color-theme=dark] #header__moon,html[color-theme=light] #header__sun,html[color-theme=system] #header__indeterminate{display:block}
+[x-cloak]{display:none!important}
+/* End Theme switching */
+
+/* richtext styles */
+.trix-content ol li {
+    list-style: decimal;
+    margin-left: 1em; }
+.trix-content ul li {
+    list-style: disc;
+    margin-left: 1em; }
+
+
+trix-editor {
+    height: 400px !important;
+    overflow-y: auto !important;
+}
+.standalone-container {
+    margin: 50px auto;
+    max-width: 720px;
+}
+#editor{
+    height: 350px;
+}
+#editor-container{
+    height: 350px;
+}
+.post-contents h1 {
+    font-size:x-large;
+}
+.post-contents h2 {
+    font-size:x-large;
+}
+.post-contents h3 {
+    font-size:larger;
+}
+.post-contents h4 {
+    font-size:large;
+}
+.post-contents h5 {
+    font-size:medium;
+}
+
+#content a {
+    color:#0096FF;
+}
+#content a:hover {
+    color: blue;
+}
+
+#content pre {
+    display: flex;
+    flex-wrap: no-wrap;
+    overflow-x: auto;
+    background-color: #333;
+    white-space: nowrap;
+    font-size: .8em;
+    padding: .8em;
+    color:  #fff;
+  }
+
+
+/* place the image in the center override trix claases */
+.attachment img {
+    width: 100%;
+    object-position: center;
+}
+
+figcaption.caption {
+    display: none !important;
+}
+
+.attachment__caption {
+    display: none !important;
+}
+/* End richtext styles */
