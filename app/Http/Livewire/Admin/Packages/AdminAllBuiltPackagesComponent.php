@@ -746,7 +746,13 @@ class AdminAllBuiltPackagesComponent extends Component
                         $maintainer = User::where('email', $value)->first();
                         if($maintainer){
                             $this->maintainerId = $maintainer->id;
-                            $package->maintainers()->attach($this->maintainerId);
+                            try{
+                                $package->maintainers()->attach($this->maintainerId);
+                            }
+                            catch(Exception $e){
+                                $this->dispatchBrowserEvent('alert',
+                                ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                            }
 
                             // $this->dispatchBrowserEvent('alert',
                             // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
@@ -761,8 +767,13 @@ class AdminAllBuiltPackagesComponent extends Component
                     $maintainer = User::where('email', $this->maintainersEmail)->first();
                     if($maintainer){
                         $this->maintainerId = $maintainer->id;
-                        $package->maintainers()->attach($this->maintainerId);
-
+                        try{
+                            $package->maintainers()->attach($this->maintainerId);
+                        }
+                        catch(Exception $e){
+                            $this->dispatchBrowserEvent('alert',
+                            ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                        }
                         // $this->dispatchBrowserEvent('alert',
                         // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
                     }
@@ -777,8 +788,13 @@ class AdminAllBuiltPackagesComponent extends Component
 
                 if($maintainer){
                     $this->maintainerId = $maintainer->id;
-                    $package->maintainers()->attach($this->maintainerId);
-
+                    try{
+                        $package->maintainers()->attach($this->maintainerId);
+                    }
+                    catch(Exception $e){
+                        $this->dispatchBrowserEvent('alert',
+                        ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                    }
                     // $this->dispatchBrowserEvent('alert',
                     // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
                 }
@@ -795,7 +811,13 @@ class AdminAllBuiltPackagesComponent extends Component
                         $contributor= User::where('email', $value)->first();
                         if($contributor){
                             $this->contributorId = $contributor->id;
-                            $package->contributors()->attach($this->contributorId);
+                            try{
+                                $package->contributors()->attach($this->contributorId);
+                            }
+                            catch(Exception $e){
+                                $this->dispatchBrowserEvent('alert',
+                                ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                            }
 
                             // $this->dispatchBrowserEvent('alert',
                             // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
@@ -809,7 +831,13 @@ class AdminAllBuiltPackagesComponent extends Component
                     $contributor = User::where('email', $this->contributorsEmail)->first();
                     if($contributor){
                         $this->contributorId = $contributor->id;
-                        $package->contributors()->attach($this->contributorId);
+                        try{
+                            $package->contributors()->attach($this->contributorId);
+                        }
+                        catch(Exception $e){
+                            $this->dispatchBrowserEvent('alert',
+                            ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                        }
 
                         // $this->dispatchBrowserEvent('alert',
                         // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
@@ -823,7 +851,13 @@ class AdminAllBuiltPackagesComponent extends Component
                 $contributor = User::where('name', $this->contributors)->first();
                 if($contributor){
                     $this->contributorId = $contributor->id;
-                    $package->contributors()->attach($this->contributorId);
+                    try{
+                        $package->contributors()->attach($this->contributorId);
+                    }
+                    catch(Exception $e){
+                        $this->dispatchBrowserEvent('alert',
+                        ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                    }
 
                     // $this->dispatchBrowserEvent('alert',
                     // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
