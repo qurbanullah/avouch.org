@@ -748,36 +748,41 @@ class AdminAllBuiltPackagesComponent extends Component
                             $this->maintainerId = $maintainer->id;
                             $package->maintainers()->attach($this->maintainerId);
 
-                            $this->dispatchBrowserEvent('alert',
-                            ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                        }else{
+                            // $this->dispatchBrowserEvent('alert',
+                            // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                        }
+                        else{
                             $this->dispatchBrowserEvent('alert',
                             ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                         }
                     }
-                }else{
+                }
+                else{
                     $maintainer = User::where('email', $this->maintainersEmail)->first();
                     if($maintainer){
                         $this->maintainerId = $maintainer->id;
                         $package->maintainers()->attach($this->maintainerId);
 
-                        $this->dispatchBrowserEvent('alert',
-                        ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                    }else{
+                        // $this->dispatchBrowserEvent('alert',
+                        // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                    }
+                    else{
                         $this->dispatchBrowserEvent('alert',
                         ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                     }
                 }
-            }else{
+            }
+            else{
                 $maintainer = User::where('name', $this->maintainers)->first();
 
                 if($maintainer){
                     $this->maintainerId = $maintainer->id;
                     $package->maintainers()->attach($this->maintainerId);
 
-                    $this->dispatchBrowserEvent('alert',
-                    ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                }else{
+                    // $this->dispatchBrowserEvent('alert',
+                    // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                }
+                else{
                     $this->dispatchBrowserEvent('alert',
                     ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                 }
@@ -792,40 +797,45 @@ class AdminAllBuiltPackagesComponent extends Component
                             $this->contributorId = $contributor->id;
                             $package->contributors()->attach($this->contributorId);
 
-                            $this->dispatchBrowserEvent('alert',
-                            ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                            // $this->dispatchBrowserEvent('alert',
+                            // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
                         }else{
                             $this->dispatchBrowserEvent('alert',
                             ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                         }
                     }
-                }else{
+                }
+                else{
                     $contributor = User::where('email', $this->contributorsEmail)->first();
                     if($contributor){
                         $this->contributorId = $contributor->id;
                         $package->contributors()->attach($this->contributorId);
 
-                        $this->dispatchBrowserEvent('alert',
-                        ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                        // $this->dispatchBrowserEvent('alert',
+                        // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
                     }else{
                         $this->dispatchBrowserEvent('alert',
                         ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                     }
                 }
-            }else{
+            }
+            else{
                 $contributor = User::where('name', $this->contributors)->first();
                 if($contributor){
                     $this->contributorId = $contributor->id;
                     $package->contributors()->attach($this->contributorId);
 
-                    $this->dispatchBrowserEvent('alert',
-                    ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                    // $this->dispatchBrowserEvent('alert',
+                    // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
                 }else{
                     $this->dispatchBrowserEvent('alert',
                     ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                 }
             }
-        }else{
+            $this->dispatchBrowserEvent('alert',
+            ['type' => 'success',  'message' => 'Package created successfully.']);
+        }
+        else{
             $this->dispatchBrowserEvent('alert',
                 ['type' => 'warning',  'message' => 'Error Creating Package.']);
         }
@@ -850,22 +860,25 @@ class AdminAllBuiltPackagesComponent extends Component
                             $this->maintainerId = $maintainer->id;
                             $builtPackage->maintainers()->attach($this->maintainerId);
 
-                            $this->dispatchBrowserEvent('alert',
-                            ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                        }else{
+                            // $this->dispatchBrowserEvent('alert',
+                            // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                        }
+                        else{
                             $this->dispatchBrowserEvent('alert',
                             ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                         }
                     }
-                }else{
+                }
+                else{
                     $maintainer = User::where('email', $this->maintainersEmail)->first();
                     if($maintainer){
                         $this->maintainerId = $maintainer->id;
                         $builtPackage->maintainers()->attach($this->maintainerId);
 
-                        $this->dispatchBrowserEvent('alert',
-                        ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                    }else{
+                        // $this->dispatchBrowserEvent('alert',
+                        // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                    }
+                    else{
                         $this->dispatchBrowserEvent('alert',
                         ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                     }
@@ -877,9 +890,10 @@ class AdminAllBuiltPackagesComponent extends Component
                     $this->maintainerId = $maintainer->id;
                     $builtPackage->maintainers()->attach($this->maintainerId);
 
-                    $this->dispatchBrowserEvent('alert',
-                    ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
-                }else{
+                    // $this->dispatchBrowserEvent('alert',
+                    // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
+                }
+                else{
                     $this->dispatchBrowserEvent('alert',
                     ['type' => 'warning',  'message' => 'Maintainer Not Found in Database.']);
                 }
@@ -894,9 +908,10 @@ class AdminAllBuiltPackagesComponent extends Component
                             $this->contributorId = $contributor->id;
                             $builtPackage->contributors()->attach($this->contributorId);
 
-                            $this->dispatchBrowserEvent('alert',
-                            ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
-                        }else{
+                            // $this->dispatchBrowserEvent('alert',
+                            // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                        }
+                        else{
                             $this->dispatchBrowserEvent('alert',
                             ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                         }
@@ -907,9 +922,10 @@ class AdminAllBuiltPackagesComponent extends Component
                         $this->contributorId = $contributor->id;
                         $builtPackage->contributors()->attach($this->contributorId);
 
-                        $this->dispatchBrowserEvent('alert',
-                        ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
-                    }else{
+                        // $this->dispatchBrowserEvent('alert',
+                        // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                    }
+                    else{
                         $this->dispatchBrowserEvent('alert',
                         ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                     }
@@ -920,14 +936,18 @@ class AdminAllBuiltPackagesComponent extends Component
                     $this->contributorId = $contributor->id;
                     $builtPackage->contributors()->attach($this->contributorId);
 
-                    $this->dispatchBrowserEvent('alert',
-                    ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
-                }else{
+                    // $this->dispatchBrowserEvent('alert',
+                    // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
+                }
+                else{
                     $this->dispatchBrowserEvent('alert',
                     ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
                 }
             }
-        }else{
+            $this->dispatchBrowserEvent('alert',
+            ['type' => 'success',  'message' => 'Built Package created successfully.']);
+        }
+        else{
             $this->dispatchBrowserEvent('alert',
                 ['type' => 'warning',  'message' => 'Error Creating Package.']);
         }
@@ -940,7 +960,7 @@ class AdminAllBuiltPackagesComponent extends Component
      */
     public function updatePackage()
     {
-
+        try{
             // Package::find($this->packageModelId)->update($this->modelDataPackage());
             $package = Package::where('name', $this->name)->first();
 
@@ -951,7 +971,11 @@ class AdminAllBuiltPackagesComponent extends Component
             $this->dispatchBrowserEvent('alert',
             ['type' => 'success',  'message' => 'Package Updated Successfully!']);
 
-
+        }
+        catch(Exception $e){
+            $this->dispatchBrowserEvent('alert',
+            ['type' => 'warning',  'message' => 'Error Updating Package.']);
+        }
     }
 
     /**
@@ -966,7 +990,8 @@ class AdminAllBuiltPackagesComponent extends Component
             $this->dispatchBrowserEvent('alert',
             ['type' => 'success',  'message' => 'Built Package updted Successfully!']);
 
-        }catch(Exception $e){
+        }
+        catch(Exception $e){
             $this->dispatchBrowserEvent('alert',
             ['type' => 'warning',  'message' => 'Error Updating Built Package.']);
         }
@@ -986,7 +1011,8 @@ class AdminAllBuiltPackagesComponent extends Component
             $this->dispatchBrowserEvent('alert',
             ['type' => 'success',  'message' => 'Built Package Deleted Successfully!']);
 
-        }catch(Exception $e){
+        }
+        catch(Exception $e){
             $this->dispatchBrowserEvent('alert',
             ['type' => 'warning',  'message' => 'Error Deleting Built Package.']);
         }
