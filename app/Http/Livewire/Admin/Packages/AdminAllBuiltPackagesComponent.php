@@ -751,7 +751,7 @@ class AdminAllBuiltPackagesComponent extends Component
                             }
                             catch(Exception $e){
                                 $this->dispatchBrowserEvent('alert',
-                                ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                                ['type' => 'warning',  'message' => 'Error attaching maintainer with error: ' . $e]);
                             }
 
                             // $this->dispatchBrowserEvent('alert',
@@ -772,7 +772,7 @@ class AdminAllBuiltPackagesComponent extends Component
                         }
                         catch(Exception $e){
                             $this->dispatchBrowserEvent('alert',
-                            ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                            ['type' => 'warning',  'message' => 'Error attaching maintainer with error: ' . $e]);
                         }
                         // $this->dispatchBrowserEvent('alert',
                         // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
@@ -793,7 +793,7 @@ class AdminAllBuiltPackagesComponent extends Component
                     }
                     catch(Exception $e){
                         $this->dispatchBrowserEvent('alert',
-                        ['type' => 'warning',  'message' => 'Error attaching maintainer.']);
+                        ['type' => 'warning',  'message' => 'Error attaching maintainer with error: ' . $e]);
                     }
                     // $this->dispatchBrowserEvent('alert',
                     // ['type' => 'success',  'message' => 'Maintainer Attached With Package.']);
@@ -816,7 +816,7 @@ class AdminAllBuiltPackagesComponent extends Component
                             }
                             catch(Exception $e){
                                 $this->dispatchBrowserEvent('alert',
-                                ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                                ['type' => 'warning',  'message' => 'Error attaching contributor with error: ' . $e]);
                             }
 
                             // $this->dispatchBrowserEvent('alert',
@@ -836,7 +836,7 @@ class AdminAllBuiltPackagesComponent extends Component
                         }
                         catch(Exception $e){
                             $this->dispatchBrowserEvent('alert',
-                            ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                            ['type' => 'warning',  'message' => 'Error attaching contributor with error: ' . $e]);
                         }
 
                         // $this->dispatchBrowserEvent('alert',
@@ -856,14 +856,14 @@ class AdminAllBuiltPackagesComponent extends Component
                     }
                     catch(Exception $e){
                         $this->dispatchBrowserEvent('alert',
-                        ['type' => 'warning',  'message' => 'Error attaching contributor']);
+                        ['type' => 'warning',  'message' => 'Error attaching contributor with error: ' . $e]);
                     }
 
                     // $this->dispatchBrowserEvent('alert',
                     // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
                 }else{
                     $this->dispatchBrowserEvent('alert',
-                    ['type' => 'warning',  'message' => 'Contributor Not Found in Database.']);
+                    ['type' => 'warning',  'message' => 'Contributor Not Found in Database with error: ' . $e]);
                 }
             }
             $this->dispatchBrowserEvent('alert',
