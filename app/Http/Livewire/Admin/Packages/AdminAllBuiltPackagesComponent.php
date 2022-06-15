@@ -863,7 +863,7 @@ class AdminAllBuiltPackagesComponent extends Component
                     // ['type' => 'success',  'message' => 'Contributor Attached With Package.']);
                 }else{
                     $this->dispatchBrowserEvent('alert',
-                    ['type' => 'warning',  'message' => 'Contributor Not Found in Database with error: ' . $e]);
+                    ['type' => 'warning',  'message' => 'Contributor Not Found in Database']);
                 }
             }
             $this->dispatchBrowserEvent('alert',
