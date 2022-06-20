@@ -3,14 +3,18 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 
 use Spatie\Sitemap\SitemapGenerator;
+
 use Spatie\Sitemap\Tags\Url;
 use Spatie\Sitemap\Sitemap;
 
 use App\Models\Group;
 use App\Models\Package;
 use App\Models\Post;
+
+use Exception;
 
 class GenerateSitemap extends Command
 {

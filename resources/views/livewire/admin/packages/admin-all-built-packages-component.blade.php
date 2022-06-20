@@ -5,7 +5,7 @@
                 <div>
                     <h2 class="text-xl font-semibold leading-tight">Built Packages</h2>
                 </div>
-                <div class="w-full h-16 my-4 sm:flex sm:flex-row ">
+                <div class="w-full h-16 my-12 sm:flex sm:flex-row ">
                     <div class="w-full h-10 flex">
                         <div class="">
                             <select wire:model="recordsToDisplay"
