@@ -41,7 +41,7 @@
                             @endif --}}
 
                             <div id="author" class="pl-4">
-                                <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="#">{{ $post->author->name }}</a></p>
+                                {{-- <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a href="#">{{ $post->author->name }}</a></p> --}}
                             </div>
                             <div id="post_banner_photo">
                                 @if (!empty($post->post_banner_image))

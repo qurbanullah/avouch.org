@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
+
 use Te7aHoudini\LaravelTrix\Traits\HasTrixRichText;
 
 use Spatie\Sitemap\Contracts\Sitemapable;
@@ -69,7 +71,9 @@ class Post extends Model implements Sitemapable
     */
     public function author()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        $databaseMain = DB::connection('mysql')->getDatabaseName();
+        return $this->belongsTo(User::class, "$databaseMain.users");
+        // return $this->belongsTo(User::class, 'user_id');
     }
 
     public function toSitemapTag(): Url | string | array
