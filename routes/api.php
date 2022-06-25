@@ -29,4 +29,5 @@ Route::post("/login", [AuthenticationController::class, 'login']);
 
 Route::get("download-package/{package}", [DownloadPackageApiController::class, 'downloadPackage']);
 Route::get("download-package-database/{packageDatabaseFile}", [DownloadPackageApiController::class, 'downloadPackagesDatabase']);
+Route::get("download-package-database/{packageFilesDatabaseFile}", [DownloadPackageApiController::class, 'downloadPackagesFilesDatabase']);
 Route::get("download-package-info-file/{packageInfoFile}", [DownloadPackageApiController::class, 'downloadPackagesInfoFiles']);

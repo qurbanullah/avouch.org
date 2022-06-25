@@ -25,11 +25,22 @@ class DownloadPackageApiController extends Controller
     function downloadPackagesDatabase($packageDatabaseFile)
     {
         $headers = [
-            'Content-Type' => 'application/tar.gz',
+            'Content-Type' => 'application/tar.zst',
          ];
 
         if (Storage::disk('packages-database')->exists($this->distribution . '/' . $this->arch . '/' . $packageDatabaseFile)) {
             return Storage::disk('packages-database')->download($this->distribution . '/' . $this->arch . '/' . $packageDatabaseFile, $packageDatabaseFile, $headers);
+        }
+    }
+
+    function downloadPackagesFilesDatabase($packageFilesDatabaseFile)
+    {
+        $headers = [
+            'Content-Type' => 'application/tar.gz',
+         ];
+
+        if (Storage::disk('packages-database')->exists($this->distribution . '/' . $this->arch . '/' . $packageFilesDatabaseFile)) {
+            return Storage::disk('packages-database')->download($this->distribution . '/' . $this->arch . '/' . $packageFilesDatabaseFile, $packageFilesDatabaseFile, $headers);
         }
     }
 
